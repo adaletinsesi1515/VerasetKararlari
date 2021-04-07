@@ -1,0 +1,66 @@
+﻿@using VerasetKararlari.Models.Entity;
+@model List<Tbl_Veraset>
+
+@{
+    ViewBag.Title = "BURDUR";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<p><a href="~/Mahkeme/Ekle/" id="kayit"></a></p>
+<script src="~/Sitiller/jquery.min.js"></script>
+
+<a href="~/Mahkeme/Ekle/" class="btn btn-primary">Karar Ekle</a>
+<br />
+<br />
+<table id="veri" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+        <tr style="background: brown; color: wheat; text-align: center;">
+         
+            <th>KARAR NO</th>
+            <th>DAVACI</th>
+            <th>VEFAT EDEN</th>
+            <th>İŞLEM</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var bilgi in Model)
+        {
+            <tr>
+               
+                <td>@bilgi.KARARNO</td>
+                <td>@bilgi.DAVACI</td>
+                <td>@bilgi.VEFATEDEN</td>
+                <td style="text-align: center">
+                    <a href="~/Mahkeme/Getir/@bilgi.ID" class="btn btn-warning">GÜNCELLE</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+<script type="text/javascript">
+    $(function() {
+        $(document).keyup(function(e) {
+            var key = (e.keyCode ? e.keyCode : e.charCode);
+            switch (key) {
+            case 49:
+                LinkeGit($('a[id$=kayit]'));
+                    break;
+            case 97:
+                LinkeGit($('a[id$=kayit]'));
+                    break;
+            case 96:
+                LinkeGit($('a[id$=kayit]'));
+                break;
+            default: ;
+            }
+        });
+        function LinkeGit(jObj) {
+            window.location.href = $(jObj).attr("href");            
+        }
+    });        
+</script>
