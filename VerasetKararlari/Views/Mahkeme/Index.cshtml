@@ -10,9 +10,9 @@
 <br />
 <p><a href="~/Mahkeme/Ekle/" id="kayit"></a></p>
 <script src="~/Sitiller/jquery.min.js"></script>
-
+<h1 style="text-align: center; color: red">BURDUR SULH HUKUK MAHKEMESİ</h1>
 <a href="~/Mahkeme/Ekle/" class="btn btn-primary">Karar Ekle</a>
-<br />
+<h4 style="color: darkblue">NOT: Karar eklemek için mouse kullanmadan direkt kısayol tuşu: Ctrl - Shift - Alt veya Alt Gr tuşlarından herhangi biridir.</h4>
 <br />
 <table id="veri" class="table table-striped table-bordered" style="width:100%">
     <thead>
@@ -47,13 +47,13 @@
         $(document).keyup(function(e) {
             var key = (e.keyCode ? e.keyCode : e.charCode);
             switch (key) {
-            case 49:
+            case 17:
                 LinkeGit($('a[id$=kayit]'));
                     break;
-            case 97:
+            case 16:
                 LinkeGit($('a[id$=kayit]'));
                     break;
-            case 96:
+            case 18:
                 LinkeGit($('a[id$=kayit]'));
                 break;
             default: ;
